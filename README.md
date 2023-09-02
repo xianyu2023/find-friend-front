@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # yupao-front
 
 伙伴匹配系统前端
+=======
+# find-friend-front
+
+伙伴匹配系统优化版
+>>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
 
 ## Getting started
 
@@ -15,14 +21,22 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
+<<<<<<< HEAD
 git remote add origin http://gitlab.code-nav.cn/qjj/yupao-front.git
+=======
+git remote add origin http://gitlab.code-nav.cn/qjj/find-friend-front.git
+>>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
 git branch -M master
 git push -uf origin master
 ```
 
 ## Integrate with your tools
 
+<<<<<<< HEAD
 - [ ] [Set up project integrations](http://gitlab.code-nav.cn/qjj/yupao-front/-/settings/integrations)
+=======
+- [ ] [Set up project integrations](http://gitlab.code-nav.cn/qjj/find-friend-front/-/settings/integrations)
+>>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
 
 ## Collaborate with your team
 
@@ -80,7 +94,11 @@ State if you are open to contributions and what your requirements are for accept
 
 For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
+<<<<<<< HEAD
 You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup lang="ts", such as starting a Selenium server for testing in a browser.
+=======
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+>>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
 
 ## Authors and acknowledgment
 Show your appreciation to those who have contributed to the project.
