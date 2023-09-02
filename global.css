@@ -1,0 +1,11 @@
+/*body {*/
+/*    background: red;*/
+/*}*/
+ .add-button {
+     position: fixed;
+     bottom: 120px;
+     right: 12px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+ }
