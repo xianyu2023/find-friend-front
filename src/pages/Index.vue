@@ -2,9 +2,9 @@
 <!--    {{-->
 <!--    JSON.stringify(route.query)-->
 <!--    }}-->
-    <van-cell center title="匹配模式">
+    <van-cell center title="寻友模式" style="color: #7232dd">
         <template #right-icon>
-            <van-switch v-model="checked" size="24" />
+            <van-switch v-model="checked" size="24" active-color="#7232dd" inactive-color="#dcdee0"  />
         </template>
     </van-cell>
     <user-card-list :user-list="userList" :loading="loading"/>
@@ -15,7 +15,7 @@
 import { ref, watchEffect} from "vue";
 import UserCardList from "../components/UserCardList.vue";
 import {matchUser, recommendUser} from "../api/api.ts";
-import {UserType} from "../model/user";
+import {UserVO} from "../model/user";
 
 
 //搜索到的用户列表，多个用户，数组[]
@@ -35,18 +35,19 @@ const loadData = async () => {
     let userListData = [];
     if (checked.value) {
         //根据标签匹配用户
-        const num = 3;
+        const num = 5;
         userListData = await matchUser(num);
     } else {
-        //直接分页查询用户
+        //直接分页查询+redis缓存用户
         userListData = await recommendUser();
     }
     if(userListData) {
-        userListData.forEach((user: UserType) => {
-            if(user.tags) {
-                user.tags = JSON.parse(user.tags)
-            }
-        })
+        //标签json字符串转数组方便展示
+        // userListData.forEach((user: UserVO) => {
+        //     if(user.tags) {
+        //         user.tags = JSON.parse(user.tags)
+        //     }
+        // })
         userList.value = userListData;
     }
     //结束加载状态
@@ -58,7 +59,6 @@ watchEffect(() => {
     // alert("checked: " + checked.value)
     loadData();
 })
-
 
 </script>
 

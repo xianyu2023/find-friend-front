@@ -16,10 +16,18 @@
                     placeholder="请输入密码"
                     :rules="[{ required: true, message: '请填写密码' }]"
             />
+            <van-field
+                v-model="checkPassword"
+                type="password"
+                name="checkPassword"
+                label="重复密码"
+                placeholder="请再次输入密码"
+                :rules="[{ required: true, message: '请填写密码' }]"
+            />
         </van-cell-group>
         <div style="margin: 16px;">
             <van-button round block type="primary" native-type="submit">
-                登录
+                注册
             </van-button>
         </div>
     </van-form>
@@ -41,16 +49,19 @@ const route = useRoute();
 const router = useRouter();
 const userAccount = ref('');
 const userPassword = ref('');
+const checkPassword = ref('');
 const onSubmit = async () => {
-    const res = await myAxios.post('/user/login',{
+    const res = await myAxios.post('/user/register',{
         userAccount: userAccount.value,
         userPassword: userPassword.value,
+        checkPassword: checkPassword.value
     })
-    console.log(res,'用户登录')
+    console.log(res,'用户注册')
     if(res.code===0 && res.data) {
-        // Toast.success('登录成功');这个vant3的Toast组件用不了
-        const oldHref = route.query?.redirect as string ?? '/';
-        window.location.href = oldHref;
+        // // Toast.success('登录成功');这个vant3的Toast组件用不了
+        // const oldHref = route.query?.redirect as string ?? '/';
+        // window.location.href = oldHref;
+        router.push("/loginUser")
     } else {
         // Toast.fail('登录失败');
     }

@@ -68,9 +68,9 @@ export const exitTeam = async (teamId: number) => {
 }
 
 /**解散队伍 POST    /team/delete */
-export const deleteTeam = async (teamId: number) => {
+export const deleteTeam = async (id: number) => {
     const res = await myAxios.post("/team/delete", {
-        teamId
+        id
     });
     if (res?.code === 0 && res.data) {
         console.log("删除队伍成功");
@@ -97,12 +97,7 @@ export const matchUser = async (num: number) => {
 
 /**直接分页查询用户 GET    /user/match */
 export const recommendUser = async () => {
-    const res = await myAxios.get('/user/recommend', {
-        params: {
-            pageNum: 1,
-            pageSize: 8,
-        },
-    })
+    const res = await myAxios.get('/user/recommend',{})
         .then(function (response) {
             // console.log('/user/recommend',response);
             // Toast.success('请求成功');

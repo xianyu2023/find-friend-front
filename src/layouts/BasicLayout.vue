@@ -1,6 +1,6 @@
 <template>
   <!--    导航栏-->
-    <van-nav-bar
+    <van-nav-bar id="bar"
             :title="name"
             left-text="返回"
             left-arrow
@@ -26,7 +26,7 @@
 
   <!--tab栏-->
 <!--    route路由模式和监听切换事件@change="onChange"冲突，不可一块用-->
-    <van-tabbar route>
+    <van-tabbar v-model="active" active-color="#7232dd" inactive-color="#000" route>
         <van-tabbar-item to="/" icon="home-o" name="index">首页</van-tabbar-item>
         <van-tabbar-item to="/team" icon="search" name="team">队伍</van-tabbar-item>
         <van-tabbar-item to="/user" icon="friends-o" name="user">用户</van-tabbar-item>
@@ -59,7 +59,7 @@ router.beforeEach((to, from) => {
 })
 
 
-// const active = ref("index");
+const active = ref("index");
 // const onChange = (index) => Toast(`标签 ${index}`);
 
 </script>
@@ -68,5 +68,9 @@ router.beforeEach((to, from) => {
 <style scoped>
 #content {
     padding-bottom: 50px;
+}
+#bar {
+    --van-nav-bar-icon-color: black;
+    --van-nav-bar-text-color: black;
 }
 </style>

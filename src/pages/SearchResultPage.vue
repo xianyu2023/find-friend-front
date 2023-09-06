@@ -2,8 +2,7 @@
 <!--    {{-->
 <!--    JSON.stringify(route.query)-->
 <!--    }}-->
-    <user-card-list :user-list="userList"/>
-
+    <user-card-list :user-list="userList" :loading="loading"/>
     <van-empty image="search" v-if="!userList || userList.length<1 " description="搜索结果为空" />
 </template>
 
@@ -28,11 +27,14 @@ const {tags} = route.query;
 //搜索到的用户列表，多个用户，数组[]
 const userList = ref([]);
 
+const loading = ref(true);
+
 /**
  * onMounted钩子给后端发送get请求
  */
 onMounted(async () => {
-    const userListData = await myAxios.get('/user/search/tags', {
+    loading.value = true;
+    const userListData = await myAxios.get('/user/list/tags', {
         params: {
             tagNameList: tags,
         },
@@ -41,23 +43,24 @@ onMounted(async () => {
         }
     })
         .then(function (response) {
-            console.log('/user/search/tags success',response);
+            console.log('/user/list/tags success',response);
             // Toast.success('请求成功');
             console.log(response);
             return response?.data;
         })
         .catch(function (error) {
-            console.error('/user/search/tags error',error);
+            console.error('/user/list/tags error',error);
             // Toast.fail('请求失败');
         });
     if(userListData) {
-        userListData.forEach(user => {
-            if(user.tags) {
-                user.tags = JSON.parse(user.tags)
-            }
-        })
+        // userListData.forEach(user => {
+        //     if(user.tags) {
+        //         user.tags = JSON.parse(user.tags)
+        //     }
+        // })
         userList.value = userListData;
     }
+    loading.value =false;
 })
 
 
@@ -67,7 +70,7 @@ const mockUser = {
     id: 1,
     userName: 'dogYuPi',
     userAccount: 123456,
-    avatarUrl: 'https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo.png',
+    userAvatar: 'https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo.png',
     profile: '咸鱼工程师',
     gender: '男',
     phone: 102111880,

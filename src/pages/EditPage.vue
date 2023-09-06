@@ -21,6 +21,7 @@ import {ref} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import myAxios from "../plugins/myAxios.ts";
 import {getCurrentUser} from "../services/user.ts";
+import {LoginUserVO} from "../model/user";
 const onSubmit = async () => {
     // console.log('submit', values);
     // console.log('submit',editUser.value.currentValue)
@@ -29,7 +30,13 @@ const onSubmit = async () => {
         console.log('用户未登录');
         return;
     }
-    const res = await myAxios.post('/user/update',{
+    let url = '';
+    if (currentUser.userRole === "admin") {
+        url = '/user/update'
+    } else if (currentUser.userRole === "user") {
+        url = '/user/update/my'
+    }
+    const res = await myAxios.post(url,{
         'id': currentUser.id,
         [editUser.value.editKey]: editUser.value.currentValue,
     })

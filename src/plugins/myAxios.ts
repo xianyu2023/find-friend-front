@@ -31,7 +31,7 @@ myAxios.interceptors.response.use(function (response) {
         //ts中使用router跳转好像不行，使用window.location.href来跳转
         //window.location.href还表示当前页地址，可用一个变量来存储当前页地址
         const oldHref = window.location.href;
-        window.location.href = `/loginUser?redirect=${oldHref}`
+        window.location.href = `/init?redirect=${oldHref}`
     }
     return response?.data;
 }, function (error) {

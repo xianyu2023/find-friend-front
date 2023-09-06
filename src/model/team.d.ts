@@ -1,4 +1,4 @@
-import {UserType} from "./user";
+import {UserVO} from "./user";
 
 /**
  * 队伍类型
@@ -15,7 +15,7 @@ export type TeamType = {
     teamPassword?: string;
     createTime: Date;
     updateTime: Date;
-    leaderVO?: UserType;
+    leaderVO?: UserVO;
     hasJoin?: boolean;
     joinNum?: number;
 };

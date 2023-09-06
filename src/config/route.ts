@@ -11,6 +11,8 @@ import TeamUpdatePage from "../pages/TeamUpdatePage.vue";
 import UserInfo from "../pages/UserInfo.vue";
 import TeamHasJoinPage from "../pages/TeamHasJoinPage.vue";
 import TeamIsLeaderPage from "../pages/TeamIsLeaderPage.vue";
+import RegisterUser from "../pages/RegisterUser.vue";
+import LoginAndRegister from "../pages/LoginAndRegister.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -19,10 +21,12 @@ const routes = [
     { path: '/', name: '首页', component: Index},
     { path: '/team', name: '队伍页', component: Team },
     { path: '/user', name: '用户页', component: User },
-    { path: '/searchPage', name: '搜索页', component: SearchPage },
+    { path: '/searchPage', name: '找朋友', component: SearchPage },
     { path: '/user/edit', name: '用户编辑页', component: EditPage },
     { path: '/searchResultPage', name: '搜索结果页',component: SearchResultPage },
     { path: '/loginUser', name: '登录用户', component: LoginUser },
+    { path: '/register', name: '注册', component: RegisterUser },
+    { path: '/init', name: '登录注册', component: LoginAndRegister },
     { path: '/team/add',name: '创建队伍页', component: TeamAddPage },
     { path: '/team/update',name: '更新队伍页', component: TeamUpdatePage },
     { path: '/user/info', name: '用户详情页',component: UserInfo },

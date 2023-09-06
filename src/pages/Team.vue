@@ -2,16 +2,16 @@
 <!--    方便全局控制样式（加个id把按钮套起来）-->
     <div id="teamPage">
         <van-search v-model="searchText" placeholder="搜索队伍" @search="onSearch"/>
-        <van-tabs v-model:active="active" type="card" @change="onTagChange">
-            <van-tab title="公开队伍" name="public"/>
-            <van-tab title="加密队伍" name="secret"/>
+        <van-tabs v-model:active="active" type="line" @change="onTagChange">
+            <van-tab title="已公开队伍" name="public"/>
+            <van-tab title="已加密队伍" name="secret"/>
         </van-tabs>
 <!--        使用margin-bottom，来隔开16px-->
         <div style="margin-bottom: 16px"></div>
 <!--        引入队伍列表数据(team-list=teamList)-->
         <team-card-list :team-list="teamList" :loading="loading"/>
 <!--        创建队伍按钮放到队伍卡片的后面，防止被队伍卡片覆盖-->
-        <van-button class="add-button" icon="plus" type="primary" @click="toAddTeam"/>
+        <van-button color="#7232dd" class="add-button" icon="plus" type="primary" @click="toAddTeam"/>
 <!--        没有队伍列表数据时-->
         <van-empty v-if="!teamList || teamList?.length < 1 " description="数据为空" />
     </div>

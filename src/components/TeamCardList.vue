@@ -5,10 +5,10 @@
             <van-card
                       :desc="team.teamDescription"
                       :title="team.teamName"
-                      :thumb="kun"
+                      :thumb="kun2"
             >
                 <template #tags>
-                    <van-tag plain type="danger" style="margin-right: 8px;margin-top: 8px " >
+                    <van-tag plain type="danger" style="margin-right: 8px;margin-top: 8px " color="#7232dd">
                         <!--                像数组索引取值-->
                         {{ teamStatusEnum[team.teamStatus] }}
                     </van-tag>
@@ -29,19 +29,21 @@
 
                 <template #footer>
                     <!--                只有队长才可以更新、解散队伍-->
-                    <van-button v-if="currentUser?.id === team.leaderId" size="mini" type="primary" plain @click="toUpdateTeam(team.id)">
+                    <van-button color="#7232dd" plain v-if="currentUser?.id === team.leaderId" size="mini" type="primary" @click="toUpdateTeam(team.id)">
                         更新队伍
                     </van-button>
-                    <van-button v-if="currentUser?.id === team.leaderId" size="mini" type="primary" plain @click="doDeleteTeam(team.id)">
+                    <van-button color="#7232dd" plain v-if="currentUser?.id === team.leaderId" size="mini" type="primary" @click="doDeleteTeam(team.id)">
                         解散队伍
                     </van-button>
 
 <!--                    如果不想给函数doJoinTeam传递队伍id参数。可以自定义一个joinTeamId变量，然后赋值-->
-                    <van-button v-if="!team.hasJoin" size="mini" type="primary" plain @click="preDoJoinTeam(team)">
+                    <van-button color="#7232dd" plain v-if="!team.hasJoin" size="mini" type="primary" @click="preDoJoinTeam(team)">
                         加入队伍
                     </van-button>
     <!--                只有已加入队伍才可以退出队伍-->
-                    <van-button v-if="team.hasJoin" size="mini" type="primary" plain @click="doExitTeam(team.id)">退出队伍</van-button>
+                    <van-button color="#7232dd" plain v-if="team.hasJoin" size="mini" type="primary" @click="doExitTeam(team.id)">
+                        退出队伍
+                    </van-button>
                 </template>
             </van-card>
         </van-skeleton>
@@ -56,7 +58,7 @@
 <script setup lang="ts">
 import {TeamType} from "../model/team";
 import {teamStatusEnum} from "../constants/team.ts";
-import kun from "../assets/kun.jpg";
+import kun2 from "../assets/kun2.jpg";
 import {deleteTeam, exitTeam, joinTeam} from "../api/api.ts";
 import {onMounted, ref} from "vue";
 import {getCurrentUser} from "../services/user.ts";

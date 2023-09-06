@@ -1,13 +1,13 @@
 // 存储用户的状态
-import {UserType} from "../model/user";
+import {UserVO} from "../model/user";
 
-let currentUser: UserType;
+let currentUser: UserVO;
 
 //接收外界传入的user，并存储起来
-const setCurrentUserState = (user: UserType) => {
+const setCurrentUserState = (user: UserVO) => {
     currentUser = user;
 }
-const getCurrentUserState = () : UserType => {
+const getCurrentUserState = () : UserVO => {
     return currentUser;
 }
 export {
