@@ -5,7 +5,7 @@ console.log(isDev)
 // Set config defaults when creating the instance
 //创建axios实例myAxios，导出给其他地方用，来发送请求
 const myAxios = axios.create({
-    baseURL: isDev ? 'http://localhost:8080/api' : '线上地址',
+    baseURL: isDev ? 'http://localhost:8080/api' : 'https://find-friend-67336-4-1318159870.sh.run.tcloudbase.com/api',
 });
 
 
@@ -22,6 +22,7 @@ myAxios.interceptors.request.use(function (config) {
     return Promise.reject(error);
 });
 
+// const router = useRouter();
 // 添加响应拦截器
 myAxios.interceptors.response.use(function (response) {
     // 对响应数据做点什么
@@ -31,7 +32,7 @@ myAxios.interceptors.response.use(function (response) {
         //ts中使用router跳转好像不行，使用window.location.href来跳转
         //window.location.href还表示当前页地址，可用一个变量来存储当前页地址
         const oldHref = window.location.href;
-        window.location.href = `/init?redirect=${oldHref}`
+        window.location.href = `/loginAndRegister?redirect=${oldHref}`
     }
     return response?.data;
 }, function (error) {

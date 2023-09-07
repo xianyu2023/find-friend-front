@@ -45,7 +45,7 @@ onMounted( async ()=> {
 const router = useRouter();
 const toEdit = (editKey: string, editName: string, currentValue: string) =>{
     console.log("currentValue==="+currentValue)
-    // 带查询参数，结果是 /register?plan=private
+    // 带查询参数，结果是 /registerUser?plan=private
     router.push({
         path: '/user/edit',
         query: {

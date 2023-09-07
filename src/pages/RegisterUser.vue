@@ -51,7 +51,7 @@ const userAccount = ref('');
 const userPassword = ref('');
 const checkPassword = ref('');
 const onSubmit = async () => {
-    const res = await myAxios.post('/user/register',{
+    const res = await myAxios.post('/user/registerUser',{
         userAccount: userAccount.value,
         userPassword: userPassword.value,
         checkPassword: checkPassword.value

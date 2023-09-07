@@ -11,7 +11,7 @@
         <van-cell title="队伍管理" is-link to="/team/isLeader"/>
         <van-cell title="他人队伍" is-link to="/team/hasJoin"/>
         <van-cell title="切换用户" is-link to="/loginUser"/>
-        <van-cell title="注册新用户" is-link to="/register"/>
+        <van-cell title="注册新用户" is-link to="/registerUser"/>
 
 
     </template>

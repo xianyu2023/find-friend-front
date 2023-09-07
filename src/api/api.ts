@@ -1,6 +1,4 @@
 import myAxios from "../plugins/myAxios.ts";
-
-
 /**创建队伍 POST    /team/add */
 export const addTeam = async (postData) => {
     //使用async异步+await等待的方式，等待请求响应完毕后才会执行后续的代码，否则会立刻执行
