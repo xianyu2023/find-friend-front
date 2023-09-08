@@ -1,11 +1,11 @@
 <<<<<<< HEAD
-# yupao-front
+# find-friend-front
 
-伙伴匹配系统前端
+寻友前端
 =======
 # find-friend-front
 
-伙伴匹配系统优化版
+寻友
 >>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
 
 ## Getting started
@@ -22,7 +22,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 ```
 cd existing_repo
 <<<<<<< HEAD
-git remote add origin http://gitlab.code-nav.cn/qjj/yupao-front.git
+git remote add origin http://gitlab.code-nav.cn/qjj/find-friend-front.git
 =======
 git remote add origin http://gitlab.code-nav.cn/qjj/find-friend-front.git
 >>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
@@ -33,7 +33,7 @@ git push -uf origin master
 ## Integrate with your tools
 
 <<<<<<< HEAD
-- [ ] [Set up project integrations](http://gitlab.code-nav.cn/qjj/yupao-front/-/settings/integrations)
+- [ ] [Set up project integrations](http://gitlab.code-nav.cn/qjj/find-friend-front/-/settings/integrations)
 =======
 - [ ] [Set up project integrations](http://gitlab.code-nav.cn/qjj/find-friend-front/-/settings/integrations)
 >>>>>>> c2f20fddad8a20ff56a0f95eaa990801af88bfa9
