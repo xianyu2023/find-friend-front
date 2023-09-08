@@ -5,7 +5,7 @@ console.log(isDev)
 // Set config defaults when creating the instance
 //创建axios实例myAxios，导出给其他地方用，来发送请求
 const myAxios = axios.create({
-    baseURL: isDev ? 'http://localhost:8080/api' : 'https://find-friend-67336-4-1318159870.sh.run.tcloudbase.com/api',
+    baseURL: isDev ? 'http://localhost:8080/api' : '线上环境',
 });
 
 
